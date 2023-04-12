@@ -1,0 +1,6 @@
+Random seed is 55.
+5 generations, 30 blocks, 0.000000010000 recombination rate, 1 chromosomes, 2 reference panels, 6 start points. 
+The inferred founder list is: 
+1 0 0 1 1 0 1 0 0 1 0 1 0 1 1 0 1 0 1 0 1 0 0 1 1 0 1 0 1 0 1 0 
+The log likelihood is: -641.060866
+Total time cost: 13.882099 s
