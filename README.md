@@ -16,4 +16,3 @@ If you have any questions, please email: yiming.zhang.cse@uconn.edu or yufeng.wu
 
 # Citation of PedMix2
 "A general approach for inferring the ancestry of ancestors of an admixed individual", by Yiming Zhang, Haotian Zhang and Yufeng Wu, manuscript, 2023. 
-
