@@ -1,4 +1,5 @@
 # Author: Yiming Zhang
+from unittest import result
 import numpy as np
 
 # Read Files
@@ -43,3 +44,26 @@ def mergeSort(List):
             List[k]=right[j]
             j += 1
             k += 1
+
+def countADP(list, NumRef):
+    count = []
+    for i in range(NumRef-1):
+        Ci = 0
+        for j in range(len(list)):
+            if list[j] == i:
+                Ci += 1
+        count.append(Ci/len(list))
+    count.append(1-sum(count))
+    return count
+
+def ResultAnalysis(list, number, NumRef):
+    ADP = []
+    for i in range(number):
+        ADP_sub = []
+        for j in range(2**i):
+            lists = list[int(j/(2**i)*len(list)):int((j+1)/(2**i)*len(list))]
+            ADP_sub.append(countADP(lists, NumRef))
+        ADP.append(ADP_sub)
+    return ADP
+
+

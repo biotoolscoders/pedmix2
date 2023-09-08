@@ -1,4 +1,6 @@
 # Author: Yiming Zhang
+
+import sys
 import numpy as np
 import random
 import argparse
@@ -10,16 +12,17 @@ from HillClimbing import *
 
 def get_parser():
     parser = argparse.ArgumentParser(description='PedMix2')
-    parser.add_argument('-g', dest='generation', help='Number of Generations', type = int, required=True)
-    parser.add_argument('-b', dest='block', help='Number of Blocks', type = int, required=True)
-    parser.add_argument('-r', dest='rate', help='Recombination Rate', required=True)
-    parser.add_argument('-c', dest='Chrom', help='Number of Chromosomes', type = int, required=True)
-    parser.add_argument('-p', dest='panel', help='Number of Reference Panels', type = int, required=True)
+    parser.add_argument('-g', dest='generation', help='Number of Generations', type = int, default=8)
+    parser.add_argument('-b', dest='block', help='Number of Blocks', type = int, default=20)
+    parser.add_argument('-r', dest='rate', help='Recombination Rate', default=1e-8)
+    parser.add_argument('-c', dest='Chrom', help='Number of Chromosomes', type = int, default=22)
+    parser.add_argument('-p', dest='panel', help='Number of Reference Panels', type = int, default=2)
     parser.add_argument('-s', dest='start', help='Number of Random Starting points', type = int, default=5)
     parser.add_argument('-F', dest='freq', help='Allele Frequency File Prefix', type = str, required=True)
     parser.add_argument('-P', dest='pos', help='Position File Prefix', type = str, required=True)
     parser.add_argument('-G', dest='Geno', help='Genotype File Prefix', type = str, required=True)
     parser.add_argument('-o', dest='out', help='Output Path Prefix', type = str, default='Result')
+    parser.add_argument('-a', dest='analysis', help='Result Analysis', type = int, default=None)
     parser.add_argument('-S', dest='seed', help='Random Seed', type = int, default=None)
     return parser
 
@@ -41,6 +44,12 @@ if __name__ == '__main__':
     POS = args.pos
     GENO = args.Geno
     OUT = args.out
+    NG = args.analysis
+
+    if NG is not None:
+       if NG > Num_generation or NG < 1:
+           print('ERROR: -a is a number larger than 0 and less than %d.' % (Num_generation+1))
+           sys.exit()
 
     random.seed(args.seed)
     
@@ -102,9 +111,23 @@ if __name__ == '__main__':
         else:
             fw.write('No random seed was applied.\n')
         fw.write('%d generations, %d blocks, %.12f recombination rate, %d chromosomes, %d reference panels, %d start points. \n' % (Num_generation, Num_Block, recombination_r, num_Chro, num_ref, num_start))
-        fw.write('The inferred founder list is: \n')
+        fw.write('The inferred founder configuration is: \n')
         for i in range(len(FOUNDER_OPT)):
             fw.write('%d ' % int(FOUNDER_OPT[i]))   
         fw.write('\n')
         fw.write('The log likelihood is: %f\n' % PROB_OPT)
-        fw.write('Total time cost: %f s' % (time_end_a-time_start_a))   
+        fw.write('Total time cost: %f s\n' % (time_end_a-time_start_a))   
+        fw.write('\n')
+        if NG is not None:
+            fw.write('Admixture Proportion Analysis:\n')
+            ADP = ResultAnalysis(FOUNDER_OPT, NG, num_ref)
+            for i in range(len(ADP)):
+                fw.write('Generation %d:\n' % (i+1))
+                for j in range(len(ADP[i])):
+                    fw.write('Individual %d:\t' % (2**i-1+j))
+                    for k in range(len(ADP[i][j])):
+                        fw.write('%.4f\t' % ADP[i][j][k])
+                    fw.write('\n')
+                    
+
+
