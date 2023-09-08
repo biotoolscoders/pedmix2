@@ -1,0 +1,27 @@
+Random seed is 55.
+8 generations, 20 blocks, 0.000000010000 recombination rate, 22 chromosomes, 2 reference panels, 5 start points. 
+The inferred founder configuration is: 
+1 0 0 1 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 1 0 0 1 1 0 1 0 1 0 1 0 1 1 0 0 1 1 1 1 1 0 1 0 1 0 1 0 1 0 1 0 1 1 0 1 0 1 0 1 1 1 1 0 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 0 1 0 0 1 1 1 1 0 0 1 0 1 0 1 1 1 1 1 1 0 1 0 1 1 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 0 0 1 0 0 0 0 1 1 0 0 1 1 0 1 0 0 1 1 1 1 1 1 0 0 1 1 1 1 1 1 1 1 0 0 1 0 0 0 0 1 1 1 0 0 1 1 1 1 1 1 1 1 0 0 0 0 1 1 1 1 0 1 0 0 1 1 1 1 0 0 0 1 1 1 0 0 1 1 1 1 1 1 1 1 0 0 0 0 1 1 1 1 1 1 1 1 0 0 0 0 1 1 1 1 0 1 0 0 0 0 1 1 0 0 0 1 1 0 0 1 
+The log likelihood is: -408634.565428
+Total time cost: 1643.316224 s
+
+Admixture Proportion Analysis:
+Generation 1:
+Individual 0:	0.3945	0.6055	
+Generation 2:
+Individual 1:	0.3828	0.6172	
+Individual 2:	0.4062	0.5938	
+Generation 3:
+Individual 3:	0.3906	0.6094	
+Individual 4:	0.3750	0.6250	
+Individual 5:	0.4062	0.5938	
+Individual 6:	0.4062	0.5938	
+Generation 4:
+Individual 7:	0.4062	0.5938	
+Individual 8:	0.3750	0.6250	
+Individual 9:	0.3750	0.6250	
+Individual 10:	0.3750	0.6250	
+Individual 11:	0.4375	0.5625	
+Individual 12:	0.3750	0.6250	
+Individual 13:	0.3750	0.6250	
+Individual 14:	0.4375	0.5625	
