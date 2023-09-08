@@ -8,7 +8,7 @@ We added a large example data to test the performance of PedMix2. We also revise
 
 
 # Usage
-Please read the [tutorial of PedMix2](https://github.com/biotoolscoders/pedmix2/PedMix2_Tutorial_v0_1.pdf) for more details.
+Please read the [tutorial of PedMix2](https://github.com/biotoolscoders/pedmix2/blob/main/PedMix2_Tutorial_v0_1.pdf) for more details.
 
 # Current version:
 v0.1. 
