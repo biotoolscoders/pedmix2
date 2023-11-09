@@ -7,7 +7,7 @@ Software accompanies for "A general approach for inferring the ancestry of recen
 We added a large example data to test the performance of PedMix2. We also revised the tutorial, which now is more complete.
 
 # Usage
-Please read the [tutorial of PedMix2](https://github.com/biotoolscoders/pedmix2/blob/main/PedMix2_Tutorial_v0_1.pdf) for more details.
+Please read the [tutorial of PedMix2](https://github.com/biotoolscoders/pedmix2/blob/main/PedMix2_Tutorial_v0.1.pdf) for more details.
 
 # Current version:
 v0.1. 
